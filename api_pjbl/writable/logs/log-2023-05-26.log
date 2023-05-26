@@ -1,0 +1,35 @@
+CRITICAL - 2023-05-26 03:24:27 --> Undefined array key "nama"
+in APPPATH\Controllers\Data_Guru.php on line 70.
+ 1 APPPATH\Controllers\Data_Guru.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl\\app\\Controllers\\Data_Guru.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Data_Guru->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_Guru))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:24:40 --> Undefined array key "nama"
+in APPPATH\Controllers\Data_Guru.php on line 70.
+ 1 APPPATH\Controllers\Data_Guru.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl\\app\\Controllers\\Data_Guru.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Data_Guru->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_Guru))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:26:16 --> Undefined array key "nama"
+in APPPATH\Controllers\Data_Guru.php on line 70.
+ 1 APPPATH\Controllers\Data_Guru.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl\\app\\Controllers\\Data_Guru.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Data_Guru->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_Guru))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:28:06 --> Undefined array key "nama"
+in APPPATH\Controllers\Data_Guru.php on line 70.
+ 1 APPPATH\Controllers\Data_Guru.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl\\app\\Controllers\\Data_Guru.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Data_Guru->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_Guru))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:28:21 --> Undefined array key "nama"
+in APPPATH\Controllers\Data_Guru.php on line 70.
+ 1 APPPATH\Controllers\Data_Guru.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl\\app\\Controllers\\Data_Guru.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Data_Guru->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_Guru))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

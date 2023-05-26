@@ -23,7 +23,7 @@
                     <v-text-field
                       v-model="username"
                       :readonly="loading"
-                      :rules="[required1]"
+                      :rules="[required]"
                       class="mb-2"
                       clearable
                       variant="outlined"
@@ -73,9 +73,13 @@
     data: () => ({
       name: 'IndexPage',
       form: false,
-      username: null,
-      password: null,
+      username: '',
+      password: '',
       loading: false,
+      datalg:{
+        username:null,
+        password:null
+      }
     }),
 
     methods: {
@@ -84,7 +88,7 @@
         username: this.username,
         password: this.password,
       };
-
+      console.log(login)
       
       this.$axios.post("http://localhost/PJBL2023/api_pjbl/public/login", login) // Ubah sesuai dengan alamat dan port server lokal Anda
       .then((response) => {

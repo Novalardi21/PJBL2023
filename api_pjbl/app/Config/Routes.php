@@ -15,6 +15,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
+$routes->setAutoRoute(true);
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -31,11 +32,32 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->options('data_guru', 'DataGuruController::options', ['namespace' => 'App\Controllers']);
-// $routes->delete('data_guru/(:num)', 'DeleteController::delete/$1', ['namespace' => 'App\Controllers']);
+// $routes->options('data_guru', 'DeleteController::options', ['namespace' => 'App\Controllers']);
+
+
+// $routes->group('api', ['namespace' => 'App\Controllers\API', 'filter' => 'cors'], function ($routes) {
+//     $routes->get('data_guru', 'data_guru::index');
+//     $routes->get('data_guru/(:segment)', 'data_guru::show/$1');
+//     $routes->post('data_guru', 'data_guru::create');
+//     $routes->put('data_guru/(:segment)', 'data_guru::update/$1');
+//     $routes->delete('data_guru/(:segment)', 'data_guru::delete/$1');
+    
+// });
+$routes->get('data_guru', 'Data_Guru::index');
+$routes->get('data_guru/(:segment)', 'Data_Guru::show/$1');
+$routes->get('data_guru/search/(:any)', 'Data_guru::search/$1');
+$routes->post('data_guru', 'Data_Guru::create');
+$routes->put('data_guruedit/(:segment)', 'Data_Guru::update/$1');
+$routes->options('data_guru', 'DeleteController::options', ['namespace' => 'App\Controllers']);
+$routes->delete('data_guru/(:num)', 'Data_Guru::delete/$1');
 $routes->resource("data_guru");
+$routes->group('api', ['namespace' => 'App\Controllers\API', 'filter' => 'cors'], function ($routes) {
+   
+
+});
 $routes->options('login', 'LoginController::options', ['namespace' => 'App\Controllers']);
-// $routes->post('login', 'Auth::login');
 $routes->add('login', 'Auth::login', ['post']);
+// $routes->post('login', 'Auth::login');
 
 /*
  * --------------------------------------------------------------------

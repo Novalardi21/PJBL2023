@@ -31,4 +31,12 @@ class data_guruModel extends Model
     //     $builder->like('nama_barang', $keyword);
     //     return $builder;
     // }
+    public function searchData($keyword)
+    {
+        // Menggunakan query builder CodeIgniter
+        $this->like('nama', $keyword);
+        $results = $this->get()->getResultArray();
+
+        return $results;
+    }
 }

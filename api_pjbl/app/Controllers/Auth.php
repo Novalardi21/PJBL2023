@@ -19,11 +19,11 @@ class Auth extends ResourceController
     {
         $model = new UserModel();
 
-        $username = $this->request->getPost('username');
-        $password = $this->request->getPost('password');
-
+        $username = $this->request->getVar('username');
+        $password = $this->request->getVar('password');
+        
         $user = $model->where('username', $username)->first();
-        var_dump($user);
+        var_dump($password);
         // if (!$user) {
         //     return $this->failNotFound('User not found');
         // }
@@ -46,19 +46,19 @@ class Auth extends ResourceController
 // {
 //     $model = new UserModel();
 
-//     $username = $this->request->getPost('username');
-//     $password = $this->request->getPost('password');
+//     $username = $this->request->getVar('username');
+//     $password = $this->request->getVar('password');
 
 //     $user = $model->where('username', $username)->first();
 
-//     // if (!$user) {
-//     //     return $this->failUnauthorized('Invalid credentials');
-//     // }
+//     if (!$user) {
+//         return $this->failUnauthorized('Invalid credentials');
+//     }
 
 //     // Cek apakah password yang dimasukkan sesuai dengan password di database
-//     // if (!password_verify($password, $user['password'])) {
-//     //     return $this->failUnauthorized('Invalid credentials');
-//     // }
+//     if (!password_verify($password, $user['password'])) {
+//         return $this->failUnauthorized('Invalid credentials');
+//     }
 
 //     $response = [
 //         'status' => 200,

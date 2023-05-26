@@ -1,0 +1,81 @@
+CRITICAL - 2023-05-26 03:29:49 --> Undefined array key "nama"
+in APPPATH\Controllers\data_guru2.php on line 70.
+ 1 APPPATH\Controllers\data_guru2.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\data_guru2.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\data_guru2->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\data_guru2))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:42:08 --> Undefined array key "nama"
+in APPPATH\Controllers\data_guru2.php on line 70.
+ 1 APPPATH\Controllers\data_guru2.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\data_guru2.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\data_guru2->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\data_guru2))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:47:11 --> Undefined array key "alamat"
+in APPPATH\Controllers\data_guru2.php on line 74.
+ 1 APPPATH\Controllers\data_guru2.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "alamat"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\data_guru2.php', 74)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\data_guru2->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\data_guru2))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:55:45 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-26 03:55:47 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-26 03:58:12 --> Declaration of App\Filters\Options::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response) must be compatible with CodeIgniter\Filters\FilterInterface::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, $arguments = null)
+in APPPATH\Filters\Options.php on line 20.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-26 03:58:13 --> Declaration of App\Filters\Options::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response) must be compatible with CodeIgniter\Filters\FilterInterface::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, $arguments = null)
+in APPPATH\Filters\Options.php on line 20.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-26 08:41:51 --> Undefined array key "nama"
+in APPPATH\Controllers\Edit.php on line 27.
+ 1 APPPATH\Controllers\Edit.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\Edit.php', 27)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Edit->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Edit))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 08:42:49 --> Undefined variable $id
+in APPPATH\Controllers\Edit.php on line 35.
+ 1 APPPATH\Controllers\Edit.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\Edit.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Edit->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Edit))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 08:45:33 --> Declaration of App\Controllers\Edit::index($id) must be compatible with CodeIgniter\RESTful\ResourceController::index()
+in APPPATH\Controllers\Edit.php on line 17.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-26 08:45:47 --> Declaration of App\Controllers\Edit::index($id) must be compatible with CodeIgniter\RESTful\ResourceController::index()
+in APPPATH\Controllers\Edit.php on line 17.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-26 08:46:14 --> Class "App\Controllers\ResourceController" not found
+in APPPATH\Controllers\Edit.php on line 9.
+ 1 SYSTEMPATH\Router\AutoRouter.php(147): include_once()
+ 2 SYSTEMPATH\Router\Router.php(507): CodeIgniter\Router\AutoRouter->getRoute('Edit')
+ 3 SYSTEMPATH\Router\Router.php(206): CodeIgniter\Router\Router->autoRoute('Edit')
+ 4 SYSTEMPATH\CodeIgniter.php(815): CodeIgniter\Router\Router->handle('Edit')
+ 5 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 08:46:36 --> Too few arguments to function App\Controllers\Edit::index(), 0 passed in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Edit.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Edit->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Edit))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 08:46:52 --> Too few arguments to function App\Controllers\Edit::index(), 0 passed in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Edit.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Edit->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Edit))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 08:58:14 --> Undefined property: App\Controllers\Hapus::$model
+in APPPATH\Controllers\Hapus.php on line 9.
+ 1 APPPATH\Controllers\Hapus.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Hapus::$model', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\Hapus.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Hapus->delete('9')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hapus))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

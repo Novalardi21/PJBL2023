@@ -5,7 +5,7 @@ use CodeIgniter\API\ResponseTrait;
 use App\Models\data_guruModel;
 use App\Models\loginModel;
 
-class data_guru extends BaseController
+class Data_Guru extends BaseController
 {
     protected $model;
     use ResponseTrait;
@@ -29,6 +29,7 @@ class data_guru extends BaseController
         $data = [
             'nama' => $this->request->getVar('nama'),
             'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+            'pendidikan' => $this->request->getVar('pendidikan'),
             'jabatan' => $this->request->getVar('jabatan'),
             'alamat' => $this->request->getVar('alamat'),
             'telepon' => $this->request->getVar('telepon'),
@@ -46,7 +47,7 @@ class data_guru extends BaseController
 
         return $this->respond($response);
     }
-     public function show($id = null)
+     public function show($id)
     {
         $data = $this->model->where('id', $id)->findAll();
         if ($data) {
@@ -55,7 +56,7 @@ class data_guru extends BaseController
             return $this->failNotFound("data gak ada");
         }
     }
-      public function update($id = null)
+      public function update($id)
     {
         // $model = new data_guruModel();
         // $data = [
@@ -68,6 +69,7 @@ class data_guru extends BaseController
         $data = [
             'nama' => $this->request->getRawInput()['nama'],
             'jenis_kelamin' => $this->request->getRawInput()['jenis_kelamin'],
+            'pendidikan' => $this->request->getRawInput()['pendidikan'],
             'jabatan' => $this->request->getRawInput()['jabatan'],
             'alamat' => $this->request->getRawInput()['alamat'],
             'telepon' => $this->request->getRawInput()['telepon'],
@@ -95,7 +97,7 @@ class data_guru extends BaseController
         return $this->respond($response);
     }
 
-    public function delete($id = null)
+    public function delete($id)
     {
         $data = $this->model->where('id', $id)->findAll();
         if ($data) {
@@ -113,31 +115,21 @@ class data_guru extends BaseController
         }
     }
 
-    //   public function login()
-    // {
-    //     $model = new data_guruModel();
-    //     $identifier = $this->request->getVar('username');
-    //     // $username = $this->request->getVar('username');
-    //     $password = $this->request->getVar('password');
+    public function search($keyword)
+    {
+        $model = new data_guruModel();
 
-    //     // $this->model->where('username', $username)->first();
-    //     $user = $model->where('id', $identifier)->orWhere('username', $identifier)->first();
+        // Melakukan pencarian data berdasarkan keyword
+        $data = $model->searchData($keyword);
+    
+        // Menyiapkan respon API
+        if (!empty($data)) {
+            return $this->respond($data, 200);
+        } else {
+            return $this->respondNoContent();
+        }
+    }
 
-    //     if (!$user) {
-    //         return $this->failNotFound('User not found');
-    //     }
-
-    //     if (!password_verify($password, $user['password'])) {
-    //         return $this->failUnauthorized('Incorrect password');
-    //     }
-
-    //     $userData = [
-    //         'id' => $user['id'],
-    //         'username' => $user['username'],
-    //     ];
-
-    //     return $this->respond($userData);
-    // }
-
+    
 
 }
