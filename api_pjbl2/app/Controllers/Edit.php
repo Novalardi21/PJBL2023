@@ -14,7 +14,7 @@ class Edit extends BaseController
     {
         $this->model = new data_guruModel();
     }
-     public function index($id = null)
+     public function index($id)
     {
         $data = [
             'nama' => $this->request->getVar('nama'),

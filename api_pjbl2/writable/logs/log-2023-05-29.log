@@ -1,0 +1,14 @@
+CRITICAL - 2023-05-29 01:50:02 --> Undefined array key "nama"
+in APPPATH\Controllers\Edit.php on line 28.
+ 1 APPPATH\Controllers\Edit.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\Edit.php', 28)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Edit->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Edit))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-29 02:20:09 --> Undefined array key "nama"
+in APPPATH\Controllers\Edit.php on line 28.
+ 1 APPPATH\Controllers\Edit.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\PJBL2023\\api_pjbl2\\app\\Controllers\\Edit.php', 28)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Edit->index('10')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Edit))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

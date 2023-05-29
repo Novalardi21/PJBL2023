@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->resource("data_guru2");
-$routes->put('Edit/(:segment)', 'Edit::update/$1');
+$routes->put('Edit/(:segment)', 'Edit::index/$1');
 $routes->delete('Hapus/(:segment)', 'Hapus::delete/$1');
 $routes->group('api', ['namespace' => 'App\Controllers\API', 'filter' => 'cors'], function ($routes) {
     // Definisikan rute-rute API Anda di sini

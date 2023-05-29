@@ -211,7 +211,7 @@
                         <v-col cols="12" sm="6" md="4">
                           <v-text-field
                             label="Jenis Kelamin"
-                            v-model="editGuru.jenis_kelamin"
+                            v-model="editGuru.gender"
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
@@ -237,7 +237,7 @@
                         <v-col cols="12" sm="6" md="4">
                           <v-text-field
                             label="No. Telepon"
-                            v-model="editGuru.telepon"
+                            v-model="editGuru.nomer"
                           ></v-text-field>
                         </v-col>
                       </v-row>
@@ -378,6 +378,7 @@ export default {
       jabatan: "",
       alamat: "",
       nomer: "",
+      pendidikan: "",
     },
   }),
 
@@ -395,11 +396,11 @@ export default {
         Object.assign(this.data_guru[this.editIndex], this.editGuru);
         var data_guru = {
           nama: this.editGuru.nama,
-          jenis_kelamin: this.editGuru.jenis_kelamin,
+          jenis_kelamin: this.editGuru.gender,
           pendidikan: this.editGuru.pendidikan,
           jabatan: this.editGuru.jabatan,
           alamat: this.editGuru.alamat,
-          telepon: this.editGuru.telepon,
+          telepon: this.editGuru.nomer,
           id: this.editGuru.id,
         };
         this.$axios
@@ -410,8 +411,9 @@ export default {
           )
           .then((response) => {
             // Data berhasil disimpan, tutup v-dialog dan refresh halaman
+            alert("Data berhasil diubah");
             this.dialog = false;
-            // this.$router.go(); // Refresh halaman
+            this.$router.go(); // Refresh halaman
             // this.created();
             console.log(response);
           })
@@ -424,11 +426,11 @@ export default {
         // Tambah data guru baru
         var data_guru = {
           nama: this.editGuru.nama,
-          jenis_kelamin: this.editGuru.jenis_kelamin,
+          jenis_kelamin: this.editGuru.gender,
           pendidikan: this.editGuru.pendidikan,
           jabatan: this.editGuru.jabatan,
           alamat: this.editGuru.alamat,
-          telepon: this.editGuru.telepon,
+          telepon: this.editGuru.nomer,
         };
         this.$axios
           .post(
@@ -455,28 +457,27 @@ export default {
       this.editIndex = this.data_guru.indexOf(item);
       this.dialog = true;
       this.editGuru.nama = item.nama;
-      this.editGuru.jenis_kelamin = item.jenis_kelamin;
+      this.editGuru.gender = item.jenis_kelamin;
       this.editGuru.pendidikan = item.pendidikan;
       this.editGuru.alamat = item.alamat;
-      this.editGuru.telepon = item.telepon;
+      this.editGuru.nomer = item.telepon;
       this.editGuru.jabatan = item.jabatan;
       this.editGuru.id = item.id;
     },
     remove(id, index) {
-      this.$axios
-        .delete(`http://localhost/PJBL2023/api_pjbl2/public/Hapus/${id}`)
-        .then((response) => {
-          // this.data_guru.splice(index, 1);
-          alert("Data berhasil diHapus");
-          this.data_guru.splice(this.editGuru, 1);
-
-          console.log(response);
-
-          this.$router.go();
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
+      if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
+        this.$axios
+          .delete(`http://localhost/PJBL2023/api_pjbl2/public/Hapus/${id}`)
+          .then((response) => {
+            alert("Data berhasil dihapus");
+            this.data_guru.splice(index, 1);
+            console.log(response);
+            this.$router.go();
+          })
+          .catch((error) => {
+            console.log(error.response);
+          });
+      }
     },
     deleteItemConfirm() {
       this.data_guru.splice(this.editedIndex, 1);
