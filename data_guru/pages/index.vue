@@ -89,6 +89,7 @@ export default {
         .then((response) => {
           // Proses respons dari server
           // ...
+          this.$cookies.set("AdminToken", "Berhasil");
           alert(" berhasil Login!");
 
           this.$router.push("/dashboard");

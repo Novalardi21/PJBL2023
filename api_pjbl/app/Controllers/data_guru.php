@@ -27,6 +27,7 @@ class Data_Guru extends BaseController
     public function create()
     {
         $data = [
+            'NIP' => $this->request->getVar('NIP'),
             'nama' => $this->request->getVar('nama'),
             'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
             'pendidikan' => $this->request->getVar('pendidikan'),

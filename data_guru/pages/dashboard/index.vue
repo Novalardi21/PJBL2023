@@ -36,20 +36,15 @@
 
                       <v-list-item-content
                         class="list"
-                        style="margin-left: 10px"
+                        style="margin-center: 10px"
                       >
                         <v-list-item-title>Admin</v-list-item-title>
                         <v-list-item-subtitle>Guru</v-list-item-subtitle>
                       </v-list-item-content>
 
                       <v-list-item-action>
-                        <v-btn text>
-                          <nuxt-link
-                            to="/"
-                            style="color: black; text-decoration: none"
-                          >
-                            <v-icon>mdi-logout</v-icon>
-                          </nuxt-link>
+                        <v-btn text @click="logout">
+                          <v-icon>mdi-logout</v-icon>
                         </v-btn>
                       </v-list-item-action>
                     </v-list-item>
@@ -175,7 +170,7 @@
         </div>
         <!-- <div
           class="search"
-          style="margin-left: 580px; margin-top: -18px; width: 600px"
+          style="margin-center: 580px; margin-top: -18px; width: 600px"
         >
           <v-toolbar flat>
             <v-text-field
@@ -204,15 +199,24 @@
                       <v-row>
                         <v-col cols="12" sm="6" md="4">
                           <v-text-field
+                            label="NIP"
+                            v-model="editGuru.NIP"
+                          ></v-text-field>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="4">
+                          <v-text-field
                             label="Nama"
                             v-model="editGuru.nama"
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
-                          <v-text-field
-                            label="Jenis Kelamin"
+                          <v-select
                             v-model="editGuru.gender"
-                          ></v-text-field>
+                            :items="items"
+                            :rules="[(v) => !!v || 'Item is required']"
+                            label="Jenis Kelamin"
+                            required
+                          ></v-select>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
                           <v-text-field
@@ -227,12 +231,12 @@
                           ></v-text-field>
                         </v-col>
                         <v-col>
-                          <v-textarea
+                          <v-text-field
                             clearable
                             label="Alamat"
                             v-model="editGuru.alamat"
                           >
-                          </v-textarea>
+                          </v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
                           <v-text-field
@@ -276,24 +280,30 @@
 
             <thead>
               <tr>
-                <th class="text-left">Nama</th>
-                <th class="text-left">Jenis Kelamin</th>
-                <th class="text-left">Pendidikan</th>
-                <th class="text-left">Jabatan</th>
-                <th class="text-left">Alamat</th>
-                <th class="text-left">No. Telepon</th>
-                <th class="text-left">Action</th>
+                <th class="text-right border-bottom">No</th>
+                <th class="text-right border-bottom">NIP</th>
+                <th class="text-right border-bottom">Nama</th>
+                <th class="text-right border-bottom">Jenis Kelamin</th>
+                <th class="text-right border-bottom">Pendidikan</th>
+                <th class="text-right border-bottom">Jabatan</th>
+                <th class="text-right border-bottom">Alamat</th>
+                <th class="text-right border-bottom">No. Telepon</th>
+                <th class="text-right border-bottom">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(item, index) in data_guru" :key="item.id">
-                <td style="width: 100px">{{ item.nama }}</td>
-                <td style="width: 100px">{{ item.jenis_kelamin }}</td>
-                <td style="width: 100px">{{ item.pendidikan }}</td>
-                <td style="width: 100px">{{ item.jabatan }}</td>
-                <td style="width: 100px">{{ item.alamat }}</td>
-                <td style="width: 100px">{{ item.telepon }}</td>
-                <td style="width: 100px">
+                <td style="text-center border-right">{{ index + 1 }}</td>
+                <td style="text-center border-right">{{ item.NIP }}</td>
+                <td style="text-center border-right">{{ item.nama }}</td>
+                <td style="text-center border-right">
+                  {{ item.jenis_kelamin }}
+                </td>
+                <td style="text-center border-right">{{ item.pendidikan }}</td>
+                <td style="text-center border-right">{{ item.jabatan }}</td>
+                <td style="text-center border-right">{{ item.alamat }}</td>
+                <td style="text-center border-right">{{ item.telepon }}</td>
+                <td style="text-center border-right">
                   <tr>
                     <v-row>
                       <v-col>
@@ -329,6 +339,7 @@
 </template>
 <script>
 export default {
+  middleware: "middleware_admin",
   created() {
     console.log("ok");
     const endpoint = "http://localhost/PJBL2023/api_pjbl/public/data_guru";
@@ -365,6 +376,7 @@ export default {
     editIndex: -1,
     editGuru: {
       id: "",
+      NIP: "",
       nama: "",
       gender: "",
       jabatan: "",
@@ -380,6 +392,8 @@ export default {
       nomer: "",
       pendidikan: "",
     },
+    select: null,
+    items: ["Laki Laki", "Perempuan"],
   }),
 
   methods: {
@@ -395,6 +409,7 @@ export default {
         // Edit data guru yang ada
         Object.assign(this.data_guru[this.editIndex], this.editGuru);
         var data_guru = {
+          NIP: this.editGuru.NIP,
           nama: this.editGuru.nama,
           jenis_kelamin: this.editGuru.gender,
           pendidikan: this.editGuru.pendidikan,
@@ -413,7 +428,7 @@ export default {
             // Data berhasil disimpan, tutup v-dialog dan refresh halaman
             alert("Data berhasil diubah");
             this.dialog = false;
-            this.$router.go(); // Refresh halaman
+            // this.$router.go(); // Refresh halaman
             // this.created();
             console.log(response);
           })
@@ -425,6 +440,7 @@ export default {
       } else {
         // Tambah data guru baru
         var data_guru = {
+          NIP: this.editGuru.NIP,
           nama: this.editGuru.nama,
           jenis_kelamin: this.editGuru.gender,
           pendidikan: this.editGuru.pendidikan,
@@ -448,6 +464,7 @@ export default {
           })
           .catch((error) => {
             console.error(error);
+            alert("Data gagal dikirim!");
           });
       }
     },
@@ -456,6 +473,7 @@ export default {
       console.log(item);
       this.editIndex = this.data_guru.indexOf(item);
       this.dialog = true;
+      this.editGuru.NIP = item.NIP;
       this.editGuru.nama = item.nama;
       this.editGuru.gender = item.jenis_kelamin;
       this.editGuru.pendidikan = item.pendidikan;
@@ -483,6 +501,11 @@ export default {
       this.data_guru.splice(this.editedIndex, 1);
       this.closeAdd();
     },
+    logout() {
+      this.$cookies.remove("AdminToken");
+      window.location.replace("/");
+      alert("Berhasil Logout");
+    },
 
     searchData(cari) {
       this.$axios
@@ -504,9 +527,16 @@ export default {
   font-family: "Poppins", sans-serif;
 }
 .profile-btn {
-  text-align: left;
+  text-align: center;
 }
 .q {
   font-weight: 700;
+}
+.border-bottom {
+  border-bottom: 1px solid #000000;
+}
+
+.border-right {
+  border-right: 1px solid #000000;
 }
 </style>
