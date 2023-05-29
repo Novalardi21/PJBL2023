@@ -173,7 +173,7 @@
             </template>
           </v-dialog>
         </div>
-        <div
+        <!-- <div
           class="search"
           style="margin-left: 580px; margin-top: -18px; width: 600px"
         >
@@ -188,7 +188,7 @@
               <v-icon>mdi-magnify</v-icon>
             </v-btn>
           </v-toolbar>
-        </div>
+        </div> -->
         <div class="tabel">
           <v-simple-table fixed-header height="500px" data-app>
             <template v-slot:top>
@@ -356,17 +356,21 @@ export default {
 
   data: () => ({
     data_guru: [],
+    menu: "",
     cari: "",
+    id_data_guru: "",
     dialog: false,
     dialogDelete: false,
     dialogProfil: false,
     editIndex: -1,
     editGuru: {
+      id: "",
       nama: "",
       gender: "",
       jabatan: "",
       alamat: "",
       nomer: "",
+      pendidikan: "",
     },
     defaultGuru: {
       nama: "",
@@ -396,9 +400,14 @@ export default {
           jabatan: this.editGuru.jabatan,
           alamat: this.editGuru.alamat,
           telepon: this.editGuru.telepon,
+          id: this.editGuru.id,
         };
         this.$axios
-          .put("http://localhost/PJBL2023/api_pjbl2/public/Edit", data_guru)
+          // .put("http://localhost/PJBL2023/api_pjbl2/public/Edit", data_guru)
+          .put(
+            `http://localhost/PJBL2023/api_pjbl2/public/Edit/${this.editGuru.id}`,
+            data_guru
+          )
           .then((response) => {
             // Data berhasil disimpan, tutup v-dialog dan refresh halaman
             this.dialog = false;
@@ -429,9 +438,11 @@ export default {
           .then((response) => {
             // Data berhasil disimpan, tutup v-dialog dan refresh halaman
             this.dialog = false;
-            this.$router.go(); // Refresh halaman
-            this.created();
+            // Refresh halaman
+            // this.created();
             console.log(response);
+            alert("Data berhasil dikirim!");
+            this.$router.go();
           })
           .catch((error) => {
             console.error(error);
@@ -449,15 +460,19 @@ export default {
       this.editGuru.alamat = item.alamat;
       this.editGuru.telepon = item.telepon;
       this.editGuru.jabatan = item.jabatan;
+      this.editGuru.id = item.id;
     },
     remove(id, index) {
       this.$axios
         .delete(`http://localhost/PJBL2023/api_pjbl2/public/Hapus/${id}`)
         .then((response) => {
           // this.data_guru.splice(index, 1);
+          alert("Data berhasil diHapus");
           this.data_guru.splice(this.editGuru, 1);
+
           console.log(response);
-          // this.$router.go();
+
+          this.$router.go();
         })
         .catch((error) => {
           console.log(error.response);
