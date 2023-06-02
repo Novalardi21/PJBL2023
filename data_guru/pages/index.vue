@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="6" class="kiri">
           <center>
-            <img src="~assets/image 2.png" style="margin-top: 285px" alt="" />
+            <img src="~assets/image 2.png" style="margin-top: 100px" alt="" />
           </center>
         </v-col>
         <v-col cols="6" class="kanan">

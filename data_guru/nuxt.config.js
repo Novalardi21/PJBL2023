@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "data_guru",
+    title: "DMS RPL",
     htmlAttrs: {
       lang: "en",
     },

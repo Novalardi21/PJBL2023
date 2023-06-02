@@ -24,6 +24,20 @@ class data_guruModel extends Model
             'required' => 'masukkan jabatan',
         ]
     ];
+    public function search($searchTerm)
+    {
+        // Lakukan logika pencarian data di sini
+        // if (!$searchTerm) {
+        //     return []; // Kembalikan array kosong jika $searchTerm tidak ada
+        // }
+
+        // Contoh: Mencari data guru berdasarkan nama
+        $builder = $this->table($this->table);
+        $builder->like('nama', $searchTerm);
+        $results = $builder->get()->getResult();
+
+        return $results;
+    }
 
     // public function cari($keyword)
     // {

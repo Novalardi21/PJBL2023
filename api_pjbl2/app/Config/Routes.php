@@ -34,11 +34,26 @@ $routes->setAutoRoute(true);
 $routes->resource("data_guru2");
 $routes->put('Edit/(:segment)', 'Edit::index/$1');
 $routes->delete('Hapus/(:segment)', 'Hapus::delete/$1');
-$routes->group('api', ['namespace' => 'App\Controllers\API', 'filter' => 'cors'], function ($routes) {
-    // Definisikan rute-rute API Anda di sini
-    // $routes->resource('data_guru2');
+// $routes->get('kelas_x', 'Kelas_x::index');
+$routes->resource("kelas_x");
+$routes->put('Edit_kelas_x/(:segment)', 'Edit_kelasX::index/$1');
+$routes->delete('Hapus_kelas_x/(:segment)', 'Hapus_kelasX::delete/$1');
+
+$routes->resource("kelas_xi");
+$routes->put('Edit_kelas_xi/(:segment)', 'Edit_kelasXI::index/$1');
+$routes->delete('Hapus_kelas_xi/(:segment)', 'Hapus_kelasXI::delete/$1');
+
+$routes->resource("kelas_xii");
+$routes->put('Edit_kelas_xii/(:segment)', 'Edit_kelasXII::index/$1');
+$routes->delete('Hapus_kelas_xii/(:segment)', 'Hapus_kelasXII::delete/$1');
+
+$routes->post('cari', 'Cari_data::index');
+
+// $routes->group('api', ['namespace' => 'App\Controllers\API', 'filter' => 'cors'], function ($routes) {
+//     // Definisikan rute-rute API Anda di sini
+//     // $routes->resource('data_guru2');
     
-});
+// });
 
 
 /*

@@ -2,190 +2,36 @@
   <div>
     <div class="semua">
       <div class="dashboard" style="font-family: 'Poppins', sans-serif">
-        <div class="appbar">
-          <v-app-bar color="#539165" dense dark>
-            <img src="~assets/image 2.png" style="width: 50px" alt="" />
-            <div class="judul" style="font-weight: 700">
-              <v-toolbar-title
-                >DATA GURU REKAYASA PERANGKAT LUNAK</v-toolbar-title
-              >
-            </div>
-
-            <v-spacer></v-spacer>
-
-            <!-- <div class="icon" >
-            <img src="~assets/mdi_user_white.png" style="width: 50px; margin-right: 70px; margin-top: 6px;" alt="">
-        </div> -->
-            <div class="info-user">
-              <v-menu v-model="menu" offset-x>
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn color="indigo" icon dark v-bind="attrs" v-on="on">
-                    <v-icon>mdi-dots-vertical</v-icon>
-                  </v-btn>
-                </template>
-
-                <v-card>
-                  <v-list>
-                    <v-list-item>
-                      <v-list-item-avatar>
-                        <img
-                          src="https://cdn.vuetifyjs.com/images/john.jpg"
-                          alt="John"
-                        />
-                      </v-list-item-avatar>
-
-                      <v-list-item-content
-                        class="list"
-                        style="margin-center: 10px"
-                      >
-                        <v-list-item-title>Admin</v-list-item-title>
-                        <v-list-item-subtitle>Guru</v-list-item-subtitle>
-                      </v-list-item-content>
-
-                      <v-list-item-action>
-                        <v-btn text @click="logout">
-                          <v-icon>mdi-logout</v-icon>
-                        </v-btn>
-                      </v-list-item-action>
-                    </v-list-item>
-                  </v-list>
-
-                  <v-divider></v-divider>
-
-                  <v-list>
-                    <v-list-item>
-                      <!-- <nuxt-link to="/profile" style="color: black; text-decoration:none;">Profil
-            </nuxt-link>-->
-                      <div class="text-center">
-                        <v-dialog v-model="dialogProfil" width="500">
-                          <template v-slot:activator="{ on, attrs }">
-                            <v-btn
-                              class="profile-btn"
-                              color="white"
-                              text
-                              width="200"
-                              v-bind="attrs"
-                              v-on="on"
-                            >
-                              Profil
-                            </v-btn>
-                          </template>
-
-                          <v-card>
-                            <v-card-title class="text-h5 grey lighten-2">
-                              Detail Profil
-                            </v-card-title>
-
-                            <v-card-text>
-                              <v-row>
-                                <v-col class="q"> Nama </v-col>
-                                <v-col class="a"> Admin </v-col>
-                              </v-row>
-                              <v-row>
-                                <v-col class="q"> Jenis Kelamin </v-col>
-                                <v-col class="a"> Tidak Disebutkan </v-col>
-                              </v-row>
-                              <v-row>
-                                <v-col class="q"> Jabatan </v-col>
-                                <v-col class="a"> guru </v-col>
-                              </v-row>
-                              <v-row>
-                                <v-col class="q"> Alamat </v-col>
-                                <v-col class="a"> dmn aja </v-col>
-                              </v-row>
-                              <v-row>
-                                <v-col class="q"> No. Telp </v-col>
-                                <v-col class="a"> 084571 </v-col>
-                              </v-row>
-                            </v-card-text>
-
-                            <v-divider></v-divider>
-
-                            <!-- <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn
-                      color="primary"
-                      text
-                      @click="dialogProfil = false"
-                    >
-                    </v-btn>
-                  </v-card-actions> -->
-                          </v-card>
-                        </v-dialog>
-                      </div>
-                    </v-list-item>
-
-                    <!-- <v-list-item>
-              <v-list-item-action>
-                <v-switch
-                  v-model="hints"
-                  color="purple"
-                ></v-switch>
-              </v-list-item-action>
-              <v-list-item-title>Enable hints</v-list-item-title>
-            </v-list-item> -->
-                  </v-list>
-
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-
-                    <!-- <v-btn
-              text
-              @click="menu = false"
-            >
-              Cancel
-            </v-btn>
-            <v-btn
-              color="primary"
-              text
-              @click="menu = false"
-            >
-              Save
-            </v-btn> -->
-                  </v-card-actions>
-                </v-card>
-              </v-menu>
-              <div class="info-logout"></div>
-            </div>
-          </v-app-bar>
-        </div>
+        <Sidebar />
       </div>
       <div class="container">
-        <div class="addBtn" style="color: #ffffff; margin-top: 21px">
-          <!-- <v-btn style="background: #539165" rounded outlined dark>Tambah Data</v-btn> -->
-          <v-dialog v-model="dialog" persistent max-width="600px">
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                style="background: #539165; font-weight: 700"
-                rounded
-                outlined
-                dark
-                v-bind="attrs"
-                v-on="on"
-              >
-                Tambah Data
-              </v-btn>
-            </template>
-          </v-dialog>
-        </div>
-        <!-- <div
-          class="search"
-          style="margin-center: 580px; margin-top: -18px; width: 600px"
-        >
-          <v-toolbar flat>
-            <v-text-field
-              v-model="cari"
-              flat
-              placeholder="Cari"
-              style="border-radius: 56px"
-            ></v-text-field>
-            <v-btn @click="searchData(cari)" icon>
-              <v-icon>mdi-magnify</v-icon>
-            </v-btn>
-          </v-toolbar>
-        </div> -->
-        <div class="tabel">
-          <v-simple-table fixed-header height="500px" data-app>
+        <v-row>
+          <v-col class="header">
+            <div class="addBtn" style="color: #ffffff; margin-top: 21px">
+              <!-- <v-btn style="background: #539165" rounded outlined dark>Tambah Data</v-btn> -->
+              <v-dialog v-model="dialog" persistent max-width="600px">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    style="background: #539165; font-weight: 700"
+                    rounded
+                    outlined
+                    dark
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    Tambah Data
+                  </v-btn>
+                </template>
+              </v-dialog>
+            </div>
+            <div class="h1">
+              <h1>Data Guru</h1>
+            </div>
+          </v-col>
+        </v-row>
+
+        <div class="tabel" v-if="kondisi == 0">
+          <v-simple-table fixed-header height="465px" data-app>
             <template v-slot:top>
               <v-dialog v-model="dialog" :key="dialog">
                 <template v-slot:activator="{ on, attrs }"> </template>
@@ -259,7 +105,61 @@
                   </v-card-actions>
                 </v-card>
               </v-dialog>
-              <v-dialog v-model="dialogDelete" max-width="500px">
+              <v-dialog v-model="dialogdetail" width="500">
+                <v-card>
+                  <v-card-title class="text-h5 grey lighten-2">
+                    Detail Data
+                  </v-card-title>
+
+                  <v-card-text>
+                    <v-row>
+                      <v-col class="q"> NIP </v-col>
+                      <v-col class="a" v-model="editGuru.NIP">{{
+                        editGuru.NIP
+                      }}</v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="q"> Nama </v-col>
+                      <v-col class="a" v-model="editGuru.nama">{{
+                        editGuru.nama
+                      }}</v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="q"> Jenis Kelamin </v-col>
+                      <v-col class="a" v-model="editGuru.gender">{{
+                        editGuru.gender
+                      }}</v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="q"> Pendidikan </v-col>
+                      <v-col class="a" v-model="editGuru.pendidikan">{{
+                        editGuru.pendidikan
+                      }}</v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="q"> Jabatan </v-col>
+                      <v-col class="a" v-model="editGuru.jabatan">{{
+                        editGuru.jabatan
+                      }}</v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="q"> Alamat </v-col>
+                      <v-col class="a" v-model="editGuru.alamat">{{
+                        editGuru.alamat
+                      }}</v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="q"> No.Telepon </v-col>
+                      <v-col class="a" v-model="editGuru.nomer">{{
+                        editGuru.nomer
+                      }}</v-col>
+                    </v-row>
+                  </v-card-text>
+
+                  <v-divider></v-divider>
+                </v-card>
+              </v-dialog>
+              <!-- <v-dialog v-model="dialogDelete" max-width="500px">
                 <v-card>
                   <v-card-title class="text-h5"
                     >Are you sure you want to delete this item?</v-card-title
@@ -275,7 +175,7 @@
                     <v-spacer></v-spacer>
                   </v-card-actions>
                 </v-card>
-              </v-dialog>
+              </v-dialog> -->
             </template>
 
             <thead>
@@ -291,54 +191,71 @@
                 <th class="text-right border-bottom">Action</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="isi_table">
               <tr v-for="(item, index) in data_guru" :key="item.id">
-                <td style="text-center border-right">{{ index + 1 }}</td>
-                <td style="text-center border-right">{{ item.NIP }}</td>
-                <td style="text-center border-right">{{ item.nama }}</td>
-                <td style="text-center border-right">
-                  {{ item.jenis_kelamin }}
-                </td>
-                <td style="text-center border-right">{{ item.pendidikan }}</td>
-                <td style="text-center border-right">{{ item.jabatan }}</td>
-                <td style="text-center border-right">{{ item.alamat }}</td>
-                <td style="text-center border-right">{{ item.telepon }}</td>
-                <td style="text-center border-right">
-                  <tr>
-                    <v-row>
-                      <v-col>
-                        <v-btn
-                          @click.prevent="edit(item)"
-                          color="primary"
-                          fab
-                          small
-                          dark
-                          ><v-icon>mdi-pencil</v-icon></v-btn
-                        >
-                      </v-col>
-                      <v-col>
-                        <v-btn
-                          @click.prevent="remove(item.id, index)"
-                          color="danger"
-                          fab
-                          small
-                          dark
-                          ><v-icon>mdi-delete</v-icon></v-btn
-                        >
-                      </v-col>
-                    </v-row>
-                  </tr>
+                <td>{{ index + 1 }}</td>
+                <td>{{ item.NIP }}</td>
+                <td>{{ item.nama }}</td>
+                <td>{{ item.jenis_kelamin }}</td>
+                <td>{{ item.pendidikan }}</td>
+                <td>{{ item.jabatan }}</td>
+                <td>{{ item.alamat }}</td>
+                <td>{{ item.telepon }}</td>
+                <td>
+                  <div class="button-center">
+                    <v-btn
+                      @click.prevent="edit(item)"
+                      color="primary"
+                      fab
+                      small
+                      dark
+                    >
+                      <v-icon>mdi-pencil</v-icon>
+                    </v-btn>
+
+                    <v-btn
+                      @click.prevent="detail(item)"
+                      color="primary"
+                      fab
+                      small
+                      dark
+                    >
+                      <v-icon>mdi-account</v-icon>
+                    </v-btn>
+
+                    <v-btn
+                      @click.prevent="remove(item.id, index)"
+                      fab
+                      small
+                      class="btn-delete color--red"
+                      dark
+                    >
+                      <v-icon>mdi-delete</v-icon>
+                    </v-btn>
+                  </div>
                 </td>
               </tr>
             </tbody>
           </v-simple-table>
+          <!-- <div v-if="kondisi == 1">
+            <v-simple-table> </v-simple-table>
+            <td>{{ datacari }}</td>
+          </div> -->
         </div>
       </div>
+      <Footer />
     </div>
   </div>
 </template>
 <script>
+import Sidebar from "@/components/Sidebar.vue";
+import Footer from "@/components/Footer.vue";
+
 export default {
+  components: {
+    Sidebar,
+    Footer,
+  },
   middleware: "middleware_admin",
   created() {
     console.log("ok");
@@ -366,13 +283,17 @@ export default {
   },
 
   data: () => ({
+    drawer: false,
     data_guru: [],
+    datacari: [],
     menu: "",
+    kondisi: 0,
     cari: "",
     id_data_guru: "",
     dialog: false,
     dialogDelete: false,
     dialogProfil: false,
+    dialogdetail: false,
     editIndex: -1,
     editGuru: {
       id: "",
@@ -482,6 +403,18 @@ export default {
       this.editGuru.jabatan = item.jabatan;
       this.editGuru.id = item.id;
     },
+    detail(item) {
+      this.dialogdetail = true;
+      this.editIndex = this.data_guru.indexOf(item);
+      this.editGuru.NIP = item.NIP;
+      this.editGuru.nama = item.nama;
+      this.editGuru.gender = item.jenis_kelamin;
+      this.editGuru.pendidikan = item.pendidikan;
+      this.editGuru.alamat = item.alamat;
+      this.editGuru.nomer = item.telepon;
+      this.editGuru.jabatan = item.jabatan;
+      this.editGuru.id = item.id;
+    },
     remove(id, index) {
       if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
         this.$axios
@@ -507,17 +440,34 @@ export default {
       alert("Berhasil Logout");
     },
 
-    searchData(cari) {
+    searchData() {
+      this.kondisi == 1;
       this.$axios
-        .get(`http://localhost/PJBL2023/api_pjbl/public/data_guru/${cari}`)
+        .post("http://localhost/PJBL2023/api_pjbl2/public/cari", {
+          nama: this.cari,
+        })
+        // .then((response) => {
+        //   this.data_guru.splice(
+        //     0,
+        //     this.data_guru.length,
+        //     ...response.data_guru
+        //   );
+        //   console.log(response.data);
+        // })
         .then((response) => {
-          // Lakukan sesuatu dengan data yang diterima dari API
+          // Memperbarui data hasil pencarian dengan respons dari API
           console.log(response.data);
+          // this.data_guru = response.data.data_guru;
+          this.datacari = response.data;
+          console.log("tes" + this.datacari);
+          alert(" berhasil menemukan data");
         })
         .catch((error) => {
-          // Tangani kesalahan jika terjadi
           console.error(error);
         });
+      // .finally(() => {
+      //   this.cari = ""; // Mengosongkan input pencarian setelah mendapatkan hasil pencarian
+      // });
     },
   },
 };
@@ -538,5 +488,23 @@ export default {
 
 .border-right {
   border-right: 1px solid #000000;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #342536; */
+}
+.h1 {
+  margin-top: 15px;
+}
+.isi_table {
+  text-align: center;
+}
+.button-center {
+  text-align: center;
+  justify-content: space-between;
+}
+.btn-delete {
+  background-color: red;
 }
 </style>

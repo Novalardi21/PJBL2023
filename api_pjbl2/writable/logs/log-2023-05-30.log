@@ -1,0 +1,76 @@
+CRITICAL - 2023-05-30 04:03:59 --> Class "App\Models\kelas_xModel" not found
+in APPPATH\Controllers\Kelas_x.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Kelas_x->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 04:05:05 --> Class "App\Models\kelas_xModel" not found
+in APPPATH\Controllers\Kelas_x.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Kelas_x->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 04:05:29 --> Class "App\Models\kelas_xModel" not found
+in APPPATH\Controllers\Kelas_x.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Kelas_x->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 14:44:10 --> Call to undefined method App\Models\data_guruModel::search
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Cari_data.php(18): CodeIgniter\Model->__call('search', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->search()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 14:47:19 --> Call to undefined method App\Controllers\Cari_data::respond()
+in APPPATH\Controllers\Cari_data.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->search()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 14:54:32 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nama', null)
+ 2 APPPATH\Models\data_guruModel.php(33): CodeIgniter\Model->__call('like', [...])
+ 3 APPPATH\Controllers\Cari_data.php(18): App\Models\data_guruModel->search(null)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->search()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 14:56:47 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nama', null)
+ 2 APPPATH\Models\data_guruModel.php(33): CodeIgniter\Model->__call('like', [...])
+ 3 APPPATH\Controllers\Cari_data.php(18): App\Models\data_guruModel->search(null)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->search()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 14:57:36 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nama', null)
+ 2 APPPATH\Models\data_guruModel.php(33): CodeIgniter\Model->__call('like', [...])
+ 3 APPPATH\Controllers\Cari_data.php(18): App\Models\data_guruModel->search(null)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 14:59:13 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nama', null)
+ 2 APPPATH\Models\data_guruModel.php(33): CodeIgniter\Model->__call('like', [...])
+ 3 APPPATH\Controllers\Cari_data.php(18): App\Models\data_guruModel->search(null)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-30 15:00:03 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nama', null)
+ 2 APPPATH\Models\data_guruModel.php(33): CodeIgniter\Model->__call('like', [...])
+ 3 APPPATH\Controllers\Cari_data.php(18): App\Models\data_guruModel->search(null)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

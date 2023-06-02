@@ -1,0 +1,16 @@
+CRITICAL - 2023-05-31 01:06:41 --> CodeIgniter\HTTP\Response::setJSON(): Argument #2 ($unencoded) must be of type bool, array given, called in C:\xampp\htdocs\PJBL2023\api_pjbl2\app\Controllers\Cari_data.php on line 30
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 246.
+ 1 APPPATH\Controllers\Cari_data.php(30): CodeIgniter\HTTP\Response->setJSON([...], [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-31 01:35:48 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\PJBL2023\api_pjbl2\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nama', null)
+ 2 APPPATH\Models\data_guruModel.php(36): CodeIgniter\Model->__call('like', [...])
+ 3 APPPATH\Controllers\Cari_data.php(25): App\Models\data_guruModel->search(null)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cari_data->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cari_data))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
